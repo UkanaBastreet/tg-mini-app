@@ -1,0 +1,360 @@
+.counter-container {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+}
+
+/* Основной контент */
+.main-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 70vh;
+  padding: 20px;
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.header h1 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #2d3748;
+  margin-bottom: 10px;
+}
+
+.subtitle {
+  font-size: 1.1rem;
+  color: #4a5568;
+}
+
+/* Элементы управления счётчиком */
+.counter-controls {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 40px;
+  margin-bottom: 60px;
+}
+
+.controls-wrapper {
+  display: flex;
+  position: relative;
+  align-items: center;
+  gap: 40px;
+}
+
+/* Контрол шага */
+.step-controls {
+  position: absolute;
+  left: calc(100% + 10px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.step-btn {
+  width: 60px;
+  height: 60px;
+  border-radius: 15px;
+  border: none;
+  font-size: 2rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.step-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
+}
+
+.step-btn:active {
+  transform: translateY(0);
+}
+
+.step-increment {
+  background-color: #4299e1;
+  color: white;
+}
+
+.step-increment:hover {
+  background-color: #3182ce;
+}
+
+.step-decrement {
+  background-color: #ed8936;
+  color: white;
+}
+
+.step-decrement:hover {
+  background-color: #dd6b20;
+}
+
+.step-value {
+  margin: 15px 0;
+  font-size: 3rem;
+  font-weight: bold;
+  color: #2b6cb0;
+  width: 60px;
+  text-align: center;
+}
+
+/* Главная кнопка */
+.main-button {
+  width: 250px;
+  height: 250px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  font-size: 5rem;
+  font-weight: bold;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 20px 40px rgba(102, 126, 234, 0.4);
+}
+
+.main-button:hover {
+  transform: scale(1.05);
+  box-shadow: 0 25px 50px rgba(102, 126, 234, 0.5);
+}
+
+.main-button:active {
+  transform: scale(0.98);
+}
+
+/* Текущее состояние */
+.current-state {
+  text-align: center;
+  color: #4a5568;
+}
+
+.current-state p {
+  font-size: 1.2rem;
+  margin-bottom: 5px;
+}
+
+.total-value {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #2b6cb0;
+}
+
+.step-info {
+  font-size: 0.9rem;
+  color: #718096;
+}
+
+/* Панель истории */
+.history-panel {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: white;
+  border-top: 2px solid #e2e8f0;
+  border-radius: 20px 20px 0 0;
+  box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.1);
+  max-height: 40vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.history-header {
+  padding: 20px;
+  border-bottom: 1px solid #e2e8f0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.history-header h2 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #2d3748;
+  margin: 0;
+}
+
+.history-count {
+  font-size: 0.875rem;
+  color: #718096;
+  background-color: #f7fafc;
+  padding: 5px 15px;
+  border-radius: 20px;
+}
+
+/* Контейнер скролла истории */
+.history-scroll-container {
+  overflow-y: auto;
+  max-height: calc(40vh - 80px);
+  padding-right: 10px;
+}
+
+.empty-history {
+  text-align: center;
+  padding: 40px 20px;
+  color: #a0aec0;
+  font-style: italic;
+}
+
+/* Список истории */
+.history-list {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.history-item {
+  background: #f8fafc;
+  border-radius: 12px;
+  border: 1px solid #edf2f7;
+  transition: background-color 0.2s ease;
+}
+
+.history-item:hover {
+  background-color: #f1f5f9;
+}
+
+.history-item-content {
+  padding: 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.history-time {
+  font-size: 0.875rem;
+  color: #718096;
+  flex: 1;
+}
+
+.history-operation {
+  flex: 2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+.prev-value {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #4a5568;
+}
+
+.operation-sign {
+  font-size: 1.25rem;
+  font-weight: bold;
+  margin: 0 5px;
+}
+
+.operation-sign.positive {
+  color: #38a169;
+}
+
+.operation-sign.negative {
+  color: #e53e3e;
+}
+
+.equals {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #718096;
+  margin: 0 5px;
+}
+
+.new-value {
+  font-size: 1.75rem;
+  font-weight: bold;
+  color: #2b6cb0;
+}
+
+.history-date {
+  font-size: 0.875rem;
+  color: #a0aec0;
+  flex: 1;
+  text-align: right;
+}
+
+.history-anchor {
+  height: 1px;
+}
+
+/* Кастомный скроллбар */
+.history-scroll-container::-webkit-scrollbar {
+  width: 8px;
+}
+
+.history-scroll-container::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 4px;
+}
+
+.history-scroll-container::-webkit-scrollbar-thumb {
+  background: #c1c1c1;
+  border-radius: 4px;
+}
+
+.history-scroll-container::-webkit-scrollbar-thumb:hover {
+  background: #a8a8a8;
+}
+
+/* Адаптивность */
+@media (max-width: 768px) {
+  .controls-wrapper {
+    gap: 30px;
+  }
+  
+  .main-button {
+    width: 200px;
+    height: 200px;
+    font-size: 4rem;
+  }
+  
+  .header h1 {
+    font-size: 2rem;
+  }
+  
+  .history-item-content {
+    flex-direction: column;
+    gap: 10px;
+    text-align: center;
+  }
+  
+  .history-time,
+  .history-date {
+    flex: none;
+    text-align: center;
+  }
+  
+  .history-operation {
+    flex: none;
+  }
+}
+
+@media (max-width: 480px) {
+  .main-button {
+    width: 180px;
+    height: 180px;
+    font-size: 3.5rem;
+  }
+  
+  .step-btn {
+    width: 50px;
+    height: 50px;
+    font-size: 1.5rem;
+  }
+  
+  .step-value {
+    font-size: 2.5rem;
+  }
+}

@@ -3,11 +3,17 @@ import { FC, useState, useRef, useEffect } from "react";
 import "./Counter.css";
 
 const Counter: FC = () => {
+  const [title, setTitle] = useState("...");
   const [total, setTotal] = useState(0);
   const [step, setStep] = useState(5);
   const [history, setHistory] = useState<ILog[]>([]);
   const historyEndRef = useRef<HTMLDivElement>(null);
 
+  useEffect(() => {
+    if(window.Telegram?.WebApp?.initDataUnsafe?.user?.first_name)
+    setTitle(window.Telegram.WebApp.initDataUnsafe?.user?.first_name);
+    
+  }, []);
   // Автоскролл к последнему элементу истории
   useEffect(() => {
     historyEndRef.current?.scrollIntoView({ behavior: "smooth" });
@@ -31,7 +37,7 @@ const Counter: FC = () => {
       {/* Основной контент по центру экрана */}
       <div className="main-content">
         <div className="header">
-          <h1>Counter App</h1>
+          <h1>{title}</h1>
           <p className="subtitle">Click the button to add {step}</p>
         </div>
 

@@ -9,9 +9,6 @@ const Counter: FC = () => {
   const [history, setHistory] = useState<ILog[]>([]);
   const historyEndRef = useRef<HTMLDivElement>(null);
 
-  useEffect(() => {
-    setTitle("json + " + JSON.stringify(window.Telegram?.WebApp?.initDataUnsafe?.user, null, 2));
-  }, []);
   // Автоскролл к последнему элементу истории
   useEffect(() => {
     historyEndRef.current?.scrollIntoView({ behavior: "smooth" });

@@ -1,9 +1,8 @@
 "use client";
-import { FC, useState, useRef, useEffect } from "react";
+import { type FC, useState, useRef, useEffect } from "react";
 import "./Counter.css";
 
 const Counter: FC = () => {
-  const [title, setTitle] = useState("...");
   const [total, setTotal] = useState(0);
   const [step, setStep] = useState(5);
   const [history, setHistory] = useState<ILog[]>([]);
@@ -32,7 +31,6 @@ const Counter: FC = () => {
       {/* Основной контент по центру экрана */}
       <div className="main-content">
         <div className="header">
-          <h1>{title}</h1>
           <p className="subtitle">Click the button to add {step}</p>
         </div>
 

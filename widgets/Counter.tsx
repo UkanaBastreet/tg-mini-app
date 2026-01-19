@@ -10,7 +10,7 @@ const Counter: FC = () => {
   const historyEndRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-      setTitle(JSON.stringify(window.Telegram, null, 2));
+    setTitle("json + " + JSON.stringify(window.Telegram, null, 2));
   }, []);
   // Автоскролл к последнему элементу истории
   useEffect(() => {

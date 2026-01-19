@@ -10,9 +10,11 @@ const Counter: FC = () => {
   const historyEndRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    if(window.Telegram?.WebApp?.initDataUnsafe?.user?.first_name)
-    setTitle(window.Telegram.WebApp.initDataUnsafe?.user?.first_name);
-    
+    if (window.Telegram?.WebApp?.initDataUnsafe?.user?.first_name) {
+      setTitle(JSON.stringify(window.Telegram, null, 2));
+    } else {
+      setTitle("Counter App");
+    }
   }, []);
   // Автоскролл к последнему элементу истории
   useEffect(() => {

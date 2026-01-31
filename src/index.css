@@ -3,6 +3,9 @@
   padding: 0;
   box-sizing: border-box;
 }
+html{
+  overflow: hidden;
+}
 :root {
   --bg-color: var(--tg-theme-bg-color, #ffffff);
   --section-bg-color: var(--tg-theme-secondary-bg-color, #f3f2f8);
@@ -22,6 +25,9 @@
   display: flex;
   justify-content: center;
   position: relative;
+  .text{
+    color: var(--text-color);
+  }
   .hint {
     color: var(--hint-color);
   }

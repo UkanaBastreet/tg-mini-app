@@ -53,33 +53,31 @@ const Counter: FC = () => {
         </div>
       </main>
       <footer>
-        {history
-          .map((log) => {
-            return (
-              <div className="log">
-                {/* <div>
+        {history.map((log,i) => {
+          return (
+            <div className="log">
+              {/* <div>
                   <span>
                     {new Date(log.date).toLocaleDateString()}
                   </span>
                 </div> */}
-                <div>
-                  <span>{log.prew}</span>
-                  <span>{log.step > 0 ? " + " + log.step : log.step}</span>
-                  <span>{" = " + log.total}</span>
-                </div>
-                <div>
-                  <span>
-                    {new Date(log.date).toLocaleTimeString([], {
-                      hour: "2-digit",
-                      minute: "2-digit",
-                      second: "2-digit",
-                    })}
-                  </span>
-                </div>
+              <div>
+                <span><b className="text">{i+1+'. '} </b> {log.prew}</span>
+                <span>{log.step > 0 ? " + " + log.step : log.step}</span>
+                <span>{" = " + log.total}</span>
               </div>
-            );
-          })
-          .reverse()}
+              <div>
+                <span>
+                  {new Date(log.date).toLocaleTimeString([], {
+                    hour: "2-digit",
+                    minute: "2-digit",
+                    second: "2-digit",
+                  })}
+                </span>
+              </div>
+            </div>
+          );
+        })}
       </footer>
     </div>
   );

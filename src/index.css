@@ -1,0 +1,19 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+.App{
+  font-size: 100px;
+}
+.bg_color {
+  color: var(--tg-theme-bg-color);
+}
+.text_color {
+  color: var(--tg-theme-text-color);
+}
+.hint_color {
+  color: var(--tg-theme-hint-color);
+}
+.link_color {
+  color: var(--tg-theme-link-color);
+}

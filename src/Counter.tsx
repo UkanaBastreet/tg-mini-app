@@ -19,12 +19,20 @@ const Counter: FC = () => {
     setTotal(newTotal);
     setHistory((h) => [...h, log]);
   }
-
+  function clear() {
+    setStep(5);
+    setTotal(0);
+    setHistory([]);
+  }
   return (
     <div className="counter-container">
-      <header></header>
+      <header>
+        <b>Click to the button to add {step}</b>
+        <button onClick={clear} className="clear-btn">
+          clear
+        </button>
+      </header>
       <main>
-        <div className="hint">Click to the button to add {step}</div>
         <button className="main-button" onClick={handler}>
           {total}
         </button>
@@ -85,4 +93,3 @@ interface ILog {
   total: number;
   prew: number;
 }
-

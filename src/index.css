@@ -1,6 +1,7 @@
 * {
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
 }
 :root {
   --bg-color: var(--tg-theme-bg-color, #ffffff);
@@ -14,10 +15,13 @@
 }
 .App {
   font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, sans-serif;
+  height: 100vh;
+  width: 100vw;
   background: var(--section-bg-color);
   color: var(--text-color);
   display: flex;
   justify-content: center;
+  position: relative;
   .hint {
     color: var(--hint-color);
   }
@@ -32,4 +36,12 @@
     align-items: center;
     text-align: center;
   }
+}
+
+button {
+  -webkit-tap-highlight-color: transparent;
+  tap-highlight-color: transparent;
+  outline: none; /* Убирает outline при фокусе */
+  -webkit-appearance: none; /* Убирает нативные стили на iOS */
+  appearance: none;
 }

@@ -2,18 +2,34 @@
   margin: 0;
   padding: 0;
 }
-.App{
-  font-size: 100px;
+:root {
+  --bg-color: var(--tg-theme-bg-color, #ffffff);
+  --section-bg-color: var(--tg-theme-secondary-bg-color, #f3f2f8);
+  --text-color: var(--tg-theme-text-color, #000000);
+  --destructive-text-color: var(--tg-theme-destructive-text-color, #ff5047);
+  --hint-color: var(--tg-theme-hint-color, #666666);
+  --link-color: var(--tg-theme-link-color, #007bff);
+  --button-color: var(--tg-theme-button-color, #5ac8fb);
+  --button-text-color: var(--tg-theme-button-text-color, #ffffff);
 }
-.bg_color {
-  color: var(--tg-theme-bg-color);
-}
-.text_color {
-  color: var(--tg-theme-text-color);
-}
-.hint_color {
-  color: var(--tg-theme-hint-color);
-}
-.link_color {
-  color: var(--tg-theme-link-color);
+.App {
+  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, sans-serif;
+  background: var(--section-bg-color);
+  color: var(--text-color);
+  display: flex;
+  justify-content: center;
+  .hint {
+    color: var(--hint-color);
+  }
+  .link {
+    color: var(--link-color);
+  }
+  button {
+    background: var(--button-color);
+    color: var(--button-text-color);
+    border: none;
+    cursor: pointer;
+    align-items: center;
+    text-align: center;
+  }
 }

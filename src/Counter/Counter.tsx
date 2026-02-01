@@ -8,6 +8,7 @@ const Counter: FC = () => {
   const [history, setHistory] = useState<ILog[]>([]);
 
   function handler() {
+    window.navigator.vibrate(100)
     const newTotal = total + step;
     const log = {
       date: Date.now(),
@@ -55,7 +56,7 @@ const Counter: FC = () => {
       <footer>
         {history.map((log,i) => {
           return (
-            <div className="log">
+            <div key={log.date} className="log">
               {/* <div>
                   <span>
                     {new Date(log.date).toLocaleDateString()}

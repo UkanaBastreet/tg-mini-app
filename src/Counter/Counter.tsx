@@ -8,7 +8,10 @@ const Counter: FC = () => {
   const [history, setHistory] = useState<ILog[]>([]);
 
   function handler() {
-    window.navigator.vibrate(100)
+    if("vibrate" in window.navigator) {
+      window.navigator.vibrate(50);
+    }
+
     const newTotal = total + step;
     const log = {
       date: Date.now(),
